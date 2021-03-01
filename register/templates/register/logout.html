@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %} Purbeurre - Déconnexion {% endblock title %}
+
+{% block header %}
+<!-- Masthead-->
+    <header class="mastheaderProfile">
+        <div class="container h-100">
+            </div>
+    </header>
+{% endblock header %}
+
+{% block content %}
+    <h2 class="contact mb-4 mt-2 text-center"> Vous êtes déconnecté de la plateforme </h2>
+        <div class="border-top pt-3">
+            <small class="text-muted">
+            <div class="row h-100 align-items-center justify-content-center text-center pt-2 mb-4">
+                <a class="btn btn-light btn-xl ml-2 text-center" href="{% url 'login'  %}" name="connect_again">Se connecter à nouveau?</a>
+            </small> 
+        </div>
+        </div>
+        <br/><br/><br/><br/><br/><br/>
+{% endblock content %}
+
+{% block footer %}
+
+    <footer class="profile_footer page-footer bg-light py-5">
+        <div class="container">
+            <div class="footer-copyright small text-center text-muted">Copyright © 2020 - PurBeurre
+            Website powered by Boostrap 4, Django, fontsawesome, OpenFoodFacts - Photographie : <a href="https://unsplash.com/photos/eqsEZNCm4-c" target="_blank">Olenka Kotyk - Fresh Deserts</a>
+            </div>
+        </div>
+    </footer>
+
+{% endblock footer %}

@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %} Purbeurre - Vos favoris {% endblock title %}
+
+
+{% block header %}
+
+    <header class="mastheaderProfile"> 
+        <div class="container h-100">
+            <div class="row h-100 align-items-center justify-content-center text-center">
+                {% if user %}
+                    <h1> Here are your favorites {{user.username.capitalize}}</h1>
+                {% endif %}
+            </div>
+        </div>
+    </header>
+
+{% endblock header %}
+
+
+{% block content %}
+<div class="container">
+  <div class="container">
+    <div class="row justify-content-center pt-4 pb-4">
+      <h2 class="custom1"> Votre prochain panier de course : </h2>
+    </div>
+  </div>
+    {% comment %} <div class="row justify-content-center pt-4 pb-4"> {% endcomment %}
+    <div class="row">
+        {% if substitutes %}
+            {% for product in substitutes %}
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 pl-4 pr-4">
+                            <a href="{{ product.prod_url }}">
+                                <img class="card-img-top" src="{{ product.prod_image_url }}" alt="product_image" height=250 width=300>
+                            </a>
+
+                            <div class="card__score">
+                                <img src="{% static 'dist/assets/img' %}/{{ product.prod_nutrition_grade_fr }}.png" alt="nutriscore" height=70 width=130>
+                            </div>
+
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <a href="{{ product.prod_url }}" title="Voir sur Openfoodfacts?">{{product.prod_name}}</a>
+
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+            {% empty %}
+                <div class="container">
+                <h5> Sorry, no favorites for you yet </h5>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+    </div>
+    </div>
+
+
+{% endblock content %}
+
+{% block footer %}
+    <footer class="favorite_footer page-footer bg-light py-5">
+        <div class="container">
+            <div class="footer-copyright small text-center text-muted">Copyright © 2020 - PurBeurre
+            Website powered by Boostrap 4, Django, fontsawesome, OpenFoodFacts - Photographie : <a href="https://unsplash.com/photos/eqsEZNCm4-c" target="_blank">Olenka Kotyk - Fresh Deserts</a>
+            </div>
+        </div>
+    </footer>
+
+{% endblock footer %}

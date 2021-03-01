@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %} Purbeurre - Se connecter {% endblock title %}
+
+{% block header %}
+<!-- Masthead-->
+    <header class="mastheaderProfile">
+        <div class="container h-100">
+            </div>
+    </header>
+{% endblock header %}
+
+{% block content %}
+    <div class="container">
+        <div class="content-section">
+            <form method="POST">
+                {% csrf_token %}
+                <fieldset  class="form-group pl-3">
+                    <legend class="contact border-bottom  mb-4 pl-1">Se connecter</legend>
+                    {{ form|crispy }}
+                </fieldset>
+
+                <div class="form-group pl-3">
+                    <button class="btn btn-outline-info" type="submit">S'identifier</button>
+                </div>
+            </form>
+
+            <div class="border-top pt-3 pl-3">
+                <small class="text-muted">Besoin d'un compte?
+                <a class="ml-2" href="{% url 'register'  %}">Créer maintenant</a>
+                </small> 
+            </div>
+        </div>
+    </div>
+    <br/><br/><br/><br/><br/><br/>
+{% endblock content %}
+
+{% block footer %}
+
+    <footer class="profile_footer page-footer bg-light py-5">
+        <div class="container">
+            <div class="footer-copyright small text-center text-muted">Copyright © 2020 - PurBeurre
+            Website powered by Boostrap 4, Django, fontsawesome, OpenFoodFacts - Photographie : <a href="https://unsplash.com/photos/eqsEZNCm4-c" target="_blank">Olenka Kotyk - Fresh Deserts</a>
+            </div>
+        </div>
+    </footer>
+
+
+
+{% endblock footer %}
