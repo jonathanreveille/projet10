@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %} Purbeurre - Résultat de recherche {% endblock title %}
+
+
+{% block header %}
+
+    <header class="mastheader"> 
+        <div class="container h-100">
+            <div class="row h-100 align-items-center justify-content-center text-center">
+
+            {% if product %}
+                <div class="header_product">
+                    <a href="#product_detail"><img src="{{ product.prod_image_url }}" alt="product_image" height=240 width=240>
+                    </a>
+                </div>
+            {% endif%}
+
+            </div>
+        </div>
+    </header>
+
+{% endblock header %}
+
+{% block content %}
+    <section class="page-section" id="product_detail">
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h2 class="mt-0"> {{product.prod_name}}</h2>
+                <hr class="divider my-4" />
+                <p class="text-muted mb-5">Quelques informations essentielles ci-dessous</p>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-lg-4 ml-auto text-center mb-5 mb-lg-0">
+                <img src="{% static 'dist/assets/img' %}/{{ product.prod_nutrition_grade_fr }}.png" 
+                height=120 width=220 alt="nutriscore">
+            </div>
+
+            <div class="col-lg-4 mr-auto text-center">
+                <img src="{{ product.prod_image_nutrition_url }}" alt="nutrition_fr_100g" height=200 width=400>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <div class="container text-center">
+        <a class="btn btn-light btn-xl mb-4" href="{{product.prod_url}}" target=_blank>Voir la fiche du produit sur OpenFoodFacts.fr</a>
+    </div>
+
+{% endblock content %}

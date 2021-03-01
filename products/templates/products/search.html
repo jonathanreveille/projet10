@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %} Purbeurre - Search Results {% endblock title %}
+
+
+{% block header %}
+<!-- Masthead-->
+  <header class="mastheader">
+      <div class="container h-100">
+        
+          <div class="row h-100 align-items-center justify-content-center text-center">
+            {% if product %}
+              {% for prod in product_found %}
+                {% if forloop.first %}
+                  <div class="image_product" value={{prod.id}}>
+                    <h2 class="searched_product_name" id="searched_product_name" name="searched_product_name"
+                    value={{prod.id}}>{{ prod.prod_name }}</h2>
+                    <img src={{prod.prod_image_url}} alt="image_searched_product" height=280 width=260>
+                  </div> 
+                {% endif %}
+              {% endfor %}
+            {% endif %}
+              </div>
+          </div>
+  </header>
+{% endblock header %}
+
+{% block content %}
+<div class="container">
+  <div class="container">
+    <div class="row justify-content-center pt-4 pb-4">
+      <h2 class="custom1"> Résultat de votre recherche pour un produit sain : </h2>
+    </div>
+  </div>
+
+  <div class="row">
+    {% for product in product_found %}
+      <div class="col-lg-4 col-sm-6 mb-4">
+        
+        <div class="card h-100 pl-4 pr-4">
+
+          <a href="{% url 'products:detail' product.id %}">
+          <img class="card-img-top" src="{{ product.prod_image_url }}" alt="product_image" height=310 width=250>
+          </a>
+
+          <div class="card__score">
+              <img src="{% static 'dist/assets/img' %}/{{ product.prod_nutrition_grade_fr }}.png" alt="nutriscore"
+              height=100 width=170>
+            </div>
+
+            <div class="card-body">
+              <h5 class="card-title">
+                <a href="{% url 'products:detail' product.id %}">{{product.prod_name}}</a>
+                  <br/>
+
+                  {% if user.is_authenticated %}
+
+                      <form method="post" action="{% url 'products:favorite' %}">
+                        {% csrf_token %}
+                        <br/>
+                          <button class="btn btn-outline-info pl-10" type="submit" name="favorite_id" value={{product.id}}>
+                            <i class="fas fa-heart"></i></button>&nbsp Sauvegarder
+
+                          <input type="hidden" id="id_substitute" name="id_substitute" value="{{ substitute.id }}">
+                          
+                          {% for p in product_found %}
+                            {% if forloop.first %}
+                          <input type="hidden" id="id_product" name="id_product" value="{{ p.id }}">
+                            {% endif %}
+                          {% endfor %}
+
+                      </form>
+
+                  {% endif %} 
+              </h5>
+            </div>
+          </div>
+        </div>
+
+  {% empty %}
+
+  <div class="col-lg-8 align-self-baseline">
+    <h3>Désolé, aucun résultat correspond à ta recherche</h3>
+  </div>
+  {% endfor %}
+  </div>
+  
+</div>
+{% endblock content %}
