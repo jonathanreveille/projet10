@@ -2,11 +2,13 @@ import unittest
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from django.contrib.auth.models import User
+from webdriver_manager.chrome import ChromeDriverManager
 
 class PurbeurreFunctionalSearchTest(unittest.TestCase):
 
     def setUp(self):
-        self.driver = webdriver.Chrome()
+        self.driver = webdriver.Chrome(ChromeDriverManager().install())
+        # self.driver = webdriver.Chrome()
 
     def test_search_in_purbeurre_search_bar_chrome(self):
         driver = self.driver
@@ -24,7 +26,8 @@ class PurbeurreFunctionalSearchTest(unittest.TestCase):
 class PurbeurreFunctionalUserLogInTest(unittest.TestCase):
 
     def setUp(self):
-        self.driver = webdriver.Chrome()
+        #self.driver = webdriver.Chrome()
+        self.driver = webdriver.Chrome(ChromeDriverManager().install())
         self.user = User.objects.create_user(
             username="usertest123",
             email="usertest@occompany.com",
@@ -50,7 +53,7 @@ class PurbeurreFunctionalUserLogInTest(unittest.TestCase):
 class PurbeurreFunctionalUserCreationTest(unittest.TestCase):
 
     def setUp(self):
-        self.driver = webdriver.Chrome()
+        self.driver = webdriver.Chrome(ChromeDriverManager().install())
 
     def test_new_user_to_create_account_chrome(self):
         driver = self.driver
@@ -75,7 +78,7 @@ class PurbeurreFunctionalUserCreationTest(unittest.TestCase):
 class PurbeurreFunctionalUserSendEmailToPurbeurreHomePage(unittest.TestCase):
 
     def setUp(self):
-        self.driver = webdriver.Chrome()
+        self.driver = webdriver.Chrome(ChromeDriverManager().install())
 
     def test_user_on_homepage_can_send_email_from_homepage(self):
         driver = self.driver
