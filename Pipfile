@@ -19,6 +19,6 @@ django-favicon = "*"
 selenium = "*"
 coverage = "*"
 sentry-sdk = "*"
+python-dotenv-run = "*"
 
 [requires]
-python_version = "3.7"
