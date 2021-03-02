@@ -51,7 +51,7 @@ Becareful not to delete the "____init____.py", nor the folder migrations !
 * 3rd step : You may add more categories, or, change the models and its fields, at this moment.
 
 ### RUN Test
-* Simply run this command in your terminal in the project : `python3 manage.py test --verbosity 2`
+* Simply run this command in your terminal in the project : `python manage.py test --verbosity 2`
 * if you want to use coverage, the command is : `coverage run --source="." manage.py test`
 
 ## Acknowledgment
