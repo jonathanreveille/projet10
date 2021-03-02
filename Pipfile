@@ -1,0 +1,24 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+selenium = "*"
+
+[packages]
+django = "*"
+requests = "*"
+django-heroku = "*"
+gunicorn = "*"
+psycopg2 = "*"
+psycopg2-binary = "*"
+markdown = "*"
+django-crispy-forms = "*"
+django-favicon = "*"
+selenium = "*"
+coverage = "*"
+sentry-sdk = "*"
+
+[requires]
+python_version = "3.7"
