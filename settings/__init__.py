@@ -33,7 +33,7 @@ SECRET_KEY = os.getenv("SECRET_KEY_DJANGO")
 # DEBUG = False if os.environ.get("ENV", "development") == "production" else True
 DEBUG = True
 
-ALLOWED_HOSTS = ['68.183.0.190','localhost']
+ALLOWED_HOSTS = ['68.183.0.190']
 
 # Application definition
 
