@@ -8,7 +8,6 @@ class PurbeurreFunctionalSearchTest(unittest.TestCase):
 
     def setUp(self):
         self.driver = webdriver.Chrome(ChromeDriverManager().install())
-        # self.driver = webdriver.Chrome()
 
     def test_search_in_purbeurre_search_bar_chrome(self):
         driver = self.driver
@@ -26,7 +25,6 @@ class PurbeurreFunctionalSearchTest(unittest.TestCase):
 class PurbeurreFunctionalUserLogInTest(unittest.TestCase):
 
     def setUp(self):
-        #self.driver = webdriver.Chrome()
         self.driver = webdriver.Chrome(ChromeDriverManager().install())
         self.user = User.objects.create_user(
             username="usertest123",
