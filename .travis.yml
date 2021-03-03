@@ -4,10 +4,10 @@ language: python
 python:
   - '3.8'
 
-addons:
-  # ajouter uniquement les navigateurs utilisés
-  chrome: stable
-  firefox: latest
+# addons:
+#   # ajouter uniquement les navigateurs utilisés
+#   chrome: stable
+#   firefox: latest
 
 branches:
   only:
@@ -17,11 +17,11 @@ install:
   - pip install pipenv
   - pipenv install
   - pipenv install --dev
-  - pip install tchappui-webdrivers
+  # - pip install tchappui-webdrivers
 
-before_script:
-  - install-webdrivers
-  - cd projet_10
+# before_script:
+#   - install-webdrivers
+#   - cd projet_10
 
 env:
   global:
