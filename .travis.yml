@@ -18,8 +18,8 @@ install:
   - pipenv install
   - pipenv install --dev
   - pip install tchappui-webdrivers
-  - pipenv shell
-
+  # - pipenv shell
+  
 before_script:
   - install-webdrivers
 
