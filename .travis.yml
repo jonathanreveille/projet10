@@ -21,6 +21,7 @@ install:
 
 before_script:
   - install-webdrivers
+  - cd projet_10
 
 env:
   global:
