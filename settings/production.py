@@ -1,4 +1,4 @@
-from . import *
+from settings.base import *
 from dotenv import load_dotenv
 
 
