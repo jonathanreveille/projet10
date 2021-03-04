@@ -45,17 +45,17 @@
 
                         <ul class="navbar-nav ml-auto my-2 my-lg-0">
                         
-                            <form method="get" action="{% url 'products:search' %}" class="query_search">
+                            <form method="get" action="{% url 'products:search' %}" class="query_search" id="query_searchbar">
                                 {{ search_form.as_p }}
                             </form>
                             
                             {% if user.is_authenticated %}
                                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'profile' %}" title="Profile"><i class="fas fa-user" alt="my_profile"></i></a></li>
                                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'favorite' %}" title="Favoris"><i class="fas fa-carrot" alt="my-food"></i></a></li>
-                                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'logout' %}" title="Déconnexion"><i class="fas fa-sign-out-alt" alt="logout"></i></a></li>
+                                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'logout' %}" title="Déconnexion" id="button-logout"><i class="fas fa-sign-out-alt" alt="logout"></i></a></li>
 
                             {% else %}
-                                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'login' %}" title="Connexion"><i class="fas fa-sign-in-alt" alt="login"></i></a></li>
+                                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'login' %}" title="Connexion" id="button-login"><i class="fas fa-sign-in-alt" alt="login" id="button-login"></i></a></li>
                                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{% url 'register' %}" title="Créer un compte"><i class="fas fa-plus-square" alt="register"></i></a></li>
                             {% endif %}
                         </ul>
