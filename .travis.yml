@@ -21,7 +21,7 @@ install:
   - pip install tchappui-webdrivers
 
 before_script:
-  - install-webdrivers
+  - install-webdrivers --path webdrivers
 
 env:
   global:
