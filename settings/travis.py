@@ -1,4 +1,5 @@
 from settings.base import *
+from dotenv import load_dotenv
 
 load_dotenv()
 SECRET_KEY_TRAVIS = os.getenv("SECRET_KEY_TRAVIS")
