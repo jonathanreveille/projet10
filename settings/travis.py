@@ -1,6 +1,7 @@
 from settings.base import *
 
-SECRET_KEY = "qlksndkljqnsdkjqnsdqnjsd203921Kqlskdnqsdqsd"
+load_dotenv()
+SECRET_KEY_TRAVIS = os.getenv("SECRET_KEY_TRAVIS")
 
 DATABASES = {
     'default': {
