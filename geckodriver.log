@@ -346,3 +346,13 @@ console.warn: SearchSettings: "get: No settings file exists, new profile?" (new 
 1614866844774	Marionette	ERROR	[19] No reply from Marionette:Register
 JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: Invalid autocomplete selectedIndex
 1614866846109	Marionette	INFO	Stopped listening on port 55906
+1614875994518	geckodriver	INFO	Listening on 127.0.0.1:62609
+1614875995526	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-headless" "--window-size=1920x1080" "-foreground" "-no-remote" "-profile" "/var/folders/t2/w9898ty911q1c72wf3vz4r_h0000gn/T/rust_mozprofilekmteSP"
+*** You are running in headless mode.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614875997950	Marionette	INFO	Listening on port 62620
+1614875998017	Marionette	WARN	TLS certificate errors will be ignored for this session
+1614875998026	Marionette	ERROR	[19] No reply from Marionette:Register
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: Invalid autocomplete selectedIndex
+1614875999334	Marionette	INFO	Stopped listening on port 62620
