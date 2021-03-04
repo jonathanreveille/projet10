@@ -60,7 +60,7 @@ class ProductModelTest(TestCase):
         # store = Store.objects.create(store_name="u")
         brand = Brand.objects.create(brand_name="sodebo")
 
-        Product.objects.create(
+        cls.product = Product.objects.create(
                 prod_name="pizza crusty",
                 prod_category=category,
                 prod_brand=brand,
@@ -70,9 +70,9 @@ class ProductModelTest(TestCase):
                 prod_image_url="https://static.openfoodfacts.org/images/products/324/227/305/0550/front_fr.16.400.jpg",
                 )
     
-    def setUp(self):
-        # Run once for every test method to setup clean data.
-        self.product = Product.objects.get(id=1)
+    # def setUp(self):
+    #     # Run once for every test method to setup clean data.
+    #     self.product = Product.objects.get(id=1) USELESS...
     
     def test_prod_name_label(self):
         field_label = self.product._meta.get_field('prod_name').verbose_name

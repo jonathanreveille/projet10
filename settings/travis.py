@@ -1,4 +1,7 @@
-from . import *
+from settings.base import *
+
+SECRET_KEY = "qlksndkljqnsdkjqnsdqnjsd203921Kqlskdnqsdqsd"
+
 
 DATABASES = {
     'default': {
