@@ -1,7 +1,7 @@
 from settings.base import *
 
-SECRET_KEY = "qlksndkljqnsdkjqnsdqnjsd203921Kqlskdnqsdqsd"
 
+SECRET_KEY = 'qlksndkljqnsdkjqnsdqnjsd203921Kqlskdnqsdqsd'
 
 DATABASES = {
     'default': {
