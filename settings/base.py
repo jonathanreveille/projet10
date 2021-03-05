@@ -49,7 +49,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['68.183.0.190', '127.0.0.1', 'localhost']
 
-# Application definition
+# Application definition#
 
 INSTALLED_APPS = [
     'products.apps.ProductsConfig',
