@@ -10,7 +10,7 @@ ALLOWED_HOSTS = ['68.183.0.190', 'localhost']
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': os.getenv("NAME_DB"),
         'HOST':'localhost',
         'PORT': 5432,
