@@ -21,5 +21,6 @@ selenium = "*"
 coverage = "*"
 sentry-sdk = "*"
 python-dotenv-run = "*"
+django-extensions = "*"
 
 [requires]
