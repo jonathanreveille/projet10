@@ -13,10 +13,11 @@ class ProductManager(db.models.Manager): # pour faire recherche pour tout les pr
         for product in product_list:
             prod_image_url = product["image_front_url"]
             prod_image_nutrition_url = product["image_nutrition_url"]
+            prod_url = product["url"]
 
-            if len(prod_image_url) > 200 or len(prod_image_nutrition_url) > 200:
+            if len(prod_image_url) > 200 or len(prod_image_nutrition_url) > 200 or len(prod_url) > 200:
                 continue
-            
+
             brand, created = models.Brand.objects.get_or_create(brand_name=product["brands"])
             
             product, created = models.Product.objects.get_or_create(
