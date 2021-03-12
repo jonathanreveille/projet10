@@ -23,5 +23,5 @@ class Command(BaseCommand):
 
             Product.objects.update_product_fields(category, products)
 
-            with open("cron.log", "a") as log:
-                log.write(f"Cron job accomplished with success at : {datetime.now()} \n")
+        with open("cron.log", "a") as log:
+            log.write(f"Cron job accomplished with success at : {datetime.now()} \n")
