@@ -49,6 +49,7 @@ class ProductManager(db.models.Manager): # pour faire recherche pour tout les pr
                 the_product.prod_url = product["url"]
                 the_product.prod_image_url = product["image_front_url"]
                 the_product.save()
+                # print("updated:", the_product)
 
             except models.Product.DoesNotExist:
                 prod_image_url = product["image_front_url"]
@@ -70,3 +71,4 @@ class ProductManager(db.models.Manager): # pour faire recherche pour tout les pr
                     'prod_brand' : brand,
                     'prod_category' : category,
                     })
+                # print("added:",product)
