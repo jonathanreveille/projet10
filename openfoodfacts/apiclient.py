@@ -1,7 +1,6 @@
 #! /usr/bin/env python3
 # coding : utf-8
 import requests
-import pprint
 
 class  ProductDownloader:
     """ This class has the responsibility to download
