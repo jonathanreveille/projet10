@@ -7,7 +7,7 @@ from openfoodfacts.constant import URL_OFOODFACTS, CATEGORY_LIST
 
 
 class Command(BaseCommand):
-    help='Mise à jour de la database avec des nouvelles données uniquement'
+    help='Mise à jour de la database avec des nouvelles données uniquement ou nouveaux produits'
 
     def handle(self, *args, **options):
         """Method that downloads products from OFF
