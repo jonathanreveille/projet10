@@ -4,6 +4,7 @@ from datetime import datetime
 from openfoodfacts.apiclient import ProductDownloader
 from products.models import Product, Category
 from openfoodfacts.constant import URL_OFOODFACTS, CATEGORY_LIST
+from sentry_sdk import capture_message
 
 
 class Command(BaseCommand):
@@ -25,3 +26,5 @@ class Command(BaseCommand):
 
         with open("cron.log", "a") as log:
             log.write(f"Cron job accomplished with success at : {datetime.now()} \n")
+            capture_message('Something went wrong')
+            
