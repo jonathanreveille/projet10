@@ -27,4 +27,4 @@ class Command(BaseCommand):
         with open("cron.log", "a") as log:
             log.write(f"Cron job accomplished with success at : {datetime.now()} \n")
         
-        capture_message('Something went wrong')
+            capture_message('Update db command was run successfully')
