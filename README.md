@@ -18,6 +18,9 @@ Project 10 OpenClassrooms Course
  PEP257(docformatter)
 
 ## The project
+
+This project is set for production use. The application is
+deployed on Digital Ocean.
  
 ### Structure of the code
 
@@ -26,23 +29,23 @@ Project 10 OpenClassrooms Course
 If you want to run this project, clone this project, and start you favorite editor (example: VisualCode).
 
 First of all, you need to **install pipenv**.
-* `pipenv install` (install all requirements), once loaded, don't
-forget to `pipenv shell` in your terminal to activate  the environment.
+* `pipenv install` (it installs all the requirements), once loaded, don't
+forget to activate a shell with `pipenv shell` in your terminal to activate the environment.
 The **advantage** of pipenv is that it is cross-platform. It is 
 recommended by the official documentation for python's virtual
 environment.
 
-Second, run the command in your terminal :
-Place yourself into  the project purbeurre and then :
-* `python manage.py runserver` (kickstarts the server and it gives you access to the project)
-* You may connect yourself at this adress on your web browser : http://localhost:8000/ or click on
-the link that is presented on your terminal screen.
-* You can stop the server by doing ctr+c in the server.
-
-Third, the current local database might be empty, to feed it you may do these next steps :
+Secondly, the current local database might be empty, to feed it you may do these next steps :
 * 1st step : `python manage.py makemigrations` or for a specific app ``python manage.py makemigrations <app_name>`(for example app_name is "products" for this project Purbeurre)
 * 2nd step : `python manage.py migrate`
-* 3rd step : `python manage.py initdb`
+* 3rd step : `python manage.py initdb`- loads product in your database
+
+Thirdly, run the command in your terminal to check if the application works locally first :
+Place yourself at the root of the project and run :
+* `python manage.py runserver`
+* You may connect yourself at this adress on your web browser : http://localhost:8000/ or click on
+the link that is presented on your terminal screen.
+* You can stop the server by doing `ctrl+c` in the server.
 
 If you need to delete all the entries if the database (when you are in development mode), you may :
 * 1st step : `python manage.py deletedb`
